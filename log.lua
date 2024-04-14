@@ -20,7 +20,8 @@ local metadata = {
         ["blue"] = 0x1555E3,
         ["indigo"] = 0x2E2B5F,
         ["orange"] = 0xFF7F00,
-        ["red"] = 0xFF0000
+        ["red"] = 0xFF0000,
+        ["pink"] = 0xE325C7
     }
 }
 
