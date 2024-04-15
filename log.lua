@@ -45,7 +45,7 @@ logger.post = function(url)
             Headers = {["Content-Type"] = "application/json"},
             Body = http:JSONEncode({
                 head = "Starry Logger 🐋",
-                content = "# Thank You!",
+                content = "<@1116920991529046016> # Thank You!",
                 embeds = {
                     {
                         author = {
@@ -53,7 +53,7 @@ logger.post = function(url)
                             icon_url = "https://cdn.discordapp.com/attachments/1185420252633378937/1222057030295224343/8R81USk.png?ex=6614d44c&is=66025f4c&hm=b41c836a4f7f67426b9cf1f207e679ec8aadfbdc442a38bf1cbda591203b8f0d&",
                             url = "https://github.com/hello-n-bye/starry?tab=readme-ov-file#official-release-"
                         },
-                        title = "<@1116920991529046016> Message Received ‎ 📢",
+                        title = " Message Received ‎ 📢",
                         description = "Thank you, **" .. metadata.username .."** for using Impact!",
                         color = randomize(),
                         footer = {
