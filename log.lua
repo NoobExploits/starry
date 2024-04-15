@@ -7,22 +7,11 @@ local logger = {}
 
 local req = (fluxus and fluxus.request) or request
 
-local deviceType = game:GetService("UserInputService"):GetPlatform() == Enum.Platform.Windows and "💻" or "📱"
-local job = tostring(game.JobId)
-local gameId = game.PlaceId
-local teleportStatement = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. gameId .. ", '" .. job .. "', player)"
-local executor = identifyexecutor()
-local currentTime = os.date("%Y-%m-%d %H:%M:%S")
-
-local GetName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 local players = game:GetService("Players")
 local http = game:GetService("HttpService")
 
-if executor == nil then
-    executor = "Unknown"
-end
-
-local player = game.Players.LocalPlayer
+local GetName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local executor = identifyexecutor()
 local localPlayer = players.LocalPlayer
 
 local metadata = {
@@ -33,8 +22,7 @@ local metadata = {
         ["blue"] = 0x1555E3,
         ["indigo"] = 0x2E2B5F,
         ["orange"] = 0xFF7F00,
-        ["red"] = 0xFF0000,
-        ["pink"] = 0xE325C7
+        ["red"] = 0xFF0000
     }
 }
 
@@ -42,7 +30,7 @@ local function randomize()
     local colors = metadata.colors
     local names = {}
 
-    for name, _ in pairs(colors) do
+    for name,_ in pairs(colors) do
         table.insert(names, name)
     end
 
@@ -67,26 +55,16 @@ logger.post = function(url)
                             url = "https://github.com/hello-n-bye/starry?tab=readme-ov-file#official-release-"
                         },
                         title = "Message Received ‎ 📢",
-                        description = "Thank you, **" .. metadata.username .."** for using Starry!",
+                        description = "Thank you, **" .. metadata.username .."** for using Impact! Uses: **" .. executor .. "**. In the game: **".. GetName .. "**.",
                         color = randomize(),
 
-                     fields = {              
-                        {
-                            name = "𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧:",
-                            value = " 𝐏𝐥𝐚𝐲𝐞𝐫:\n〘👤〙**Username**: [" .. localPlayer.Name .. "](https://www.roblox.com/users/" .. player.UserId .. "/profile)\n〘🎲〙**Player ID:** " .. plyID .. "\n\n𝐆𝐚𝐦𝐞𝐬:\n〘🎮〙**Game**: [" .. gameName .. "](https://www.roblox.com/games/" .. gameId .. ")\n〘🎲〙Game ID: " .. gameId .. "\n\n 𝐌𝐢𝐬𝐜:\n〘🔧〙**Executor**: " .. executor .. "\n **〘❓〙Platform**: " .. deviceType .."\n\n 𝐄𝐱𝐞𝐜𝐮𝐭𝐢𝐨𝐧 𝐓𝐢𝐦𝐞 🕧\n ".. currentTime,
-                            inline = true
-                        },
-                        {
-                            name = FieldTitle,
-                            value = FieldText,
-                            inline = true
-                        },
-                        {
-                            name = "𝐒𝐧𝐢𝐩𝐞 𝐏𝐥𝐚𝐲𝐞𝐫",
-                            value = "```lua\n" .. teleportStatement .. "```",
-                            inline = true
-                        }
-                },
+                    fields = {              
+                    {
+                        name = "test",
+                        value = "test2",
+                        inline = true
+                    }
+                                    },
                                     
                         footer = {
                             text = "Made with 💖 by Suno"
