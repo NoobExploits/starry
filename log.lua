@@ -9,6 +9,7 @@ local req = (fluxus and fluxus.request) or request
 
 local players = game:GetService("Players")
 local http = game:GetService("HttpService")
+local executor = identifyexecutor()
 
 local localPlayer = players.LocalPlayer
 
@@ -54,7 +55,7 @@ logger.post = function(url)
                             url = "https://github.com/hello-n-bye/starry?tab=readme-ov-file#official-release-"
                         },
                         title = " Message Received ‎ 📢",
-                        description = "Thank you, **" .. metadata.username .."** for using Impact!",
+                        description = "Thank you, **" .. metadata.username .."** for using Impact! Uses: " .. executor .. ".",
                         color = randomize(),
                         footer = {
                             text = "Made with 💖 by Suno"
