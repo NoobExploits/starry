@@ -11,6 +11,10 @@ local players = game:GetService("Players")
 local http = game:GetService("HttpService")
 local executor = identifyexecutor()
 
+if executor == nil then
+    executor = "Unknown"
+end
+
 local localPlayer = players.LocalPlayer
 
 local metadata = {
