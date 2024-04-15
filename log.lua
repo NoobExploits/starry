@@ -16,7 +16,7 @@ local localPlayer = players.LocalPlayer
 local job = tostring(game.JobId)
 local gameId = game.PlaceId
 
-local teleportStatement = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. gameId .. ", '" .. job .. "', localPlayer)"
+local teleportStatement = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. gameId .. ", '" .. job .. "', player)"
 
 local metadata = {
     ["username"] = localPlayer.Name,
