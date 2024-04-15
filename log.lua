@@ -22,6 +22,7 @@ if executor == nil then
     executor = "Unknown"
 end
 
+local player = game.Players.LocalPlayer
 local localPlayer = players.LocalPlayer
 
 local metadata = {
