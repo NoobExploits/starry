@@ -50,7 +50,7 @@ logger.post = function(url)
             Headers = {["Content-Type"] = "application/json"},
             Body = http:JSONEncode({
                 head = "Starry Logger 🐋",
-                content = "<@1116920991529046016> Thank You!",
+                content = "# Thank You!",
                 embeds = {
                     {
                         author = {
