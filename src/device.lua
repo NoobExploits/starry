@@ -32,7 +32,7 @@ local function platform(agent)
         return "Android"
     elseif (string.find(agent, "iOS")) then
         return "iOS"
-    elseif (string.find(agent, "Krampus")) then
+    elseif (string.find(agent, "Celery")) then
         return "Windows"
     else
         if (string.find(identifyexecutor(), "Wave")) or (string.find(identifyexecutor(), "Solara")) then
